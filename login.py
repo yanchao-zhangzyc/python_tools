@@ -15,4 +15,10 @@ def main():
         t=threading.Thread(target=loop,args=(i,loops[i]))
         threads.append(t)
     for i in nloops:
-        threads
+        threads[i].start()
+    for i in nloops:
+        threads[i].join()
+    print('all Done at :',ctime())
+if __name__=='__main__':
+    main()
+
